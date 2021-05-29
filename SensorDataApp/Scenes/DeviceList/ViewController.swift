@@ -11,6 +11,11 @@ class ViewController: UIViewController {
 
   var devices = ["Device 1","Device 2","Device 3","Device 4","Device 5"]
 
+  var viewModel: DeviceListVMProtocol? {
+    didSet {
+      viewModel?.delegate = self
+    }
+  }
   @IBOutlet weak var collectionView: UICollectionView!
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,5 +48,16 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
          return CGSize(width: width, height: height)
      }
+}
+extension ViewController: DeviceListVMDelegate {
+  func handleViewModelOutputs(_ output: DeviceListVMOutput) {
+
+  }
+
+  func navigateToDetailScreen() {
+
+  }
+
+
 }
 
