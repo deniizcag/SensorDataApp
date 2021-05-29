@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+protocol DeviceListVMProtocol {
+  var delegate: DeviceListVMDelegate? {get set}
+  func fetch()
+  func selectDevice(at index: Int)
+}
+enum DeviceListVMOutput {
+  case setLoading(Bool)
+  case showDeviceList
+  case updateTitle(String)
+}
+protocol DeviceListVMDelegate: class {
+  func handleViewModelOutputs(_ output: DeviceListVMOutput)
+  func navigateToDetailScreen()
+}
