@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21C6B1CEB2F7BF4478A57186 /* Pods_SensorDataApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */; };
 		2A0DBF6F266222DB0092AD27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */; };
 		2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */; };
 		2A0DBF73266222DB0092AD27 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF72266222DB0092AD27 /* ViewController.swift */; };
@@ -14,9 +15,20 @@
 		2A0DBF79266222DB0092AD27 /* SensorDataApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF77266222DB0092AD27 /* SensorDataApp.xcdatamodeld */; };
 		2A0DBF7B266222DD0092AD27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DBF7A266222DD0092AD27 /* Assets.xcassets */; };
 		2A0DBF7E266222DD0092AD27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DBF7C266222DD0092AD27 /* LaunchScreen.storyboard */; };
+		2A0DBF8D266228FC0092AD27 /* DeviceCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF8C266228FC0092AD27 /* DeviceCollectionViewCell.swift */; };
+		2A0DBF9226624A920092AD27 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF9126624A910092AD27 /* ApiConstants.swift */; };
+		2A0DBF97266252EB0092AD27 /* DeviceListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF96266252EB0092AD27 /* DeviceListContracts.swift */; };
+		2A0DBF9E266254B30092AD27 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF9D266254B30092AD27 /* ApiService.swift */; };
+		2A0DBFA4266265930092AD27 /* Device+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA0266265930092AD27 /* Device+CoreDataClass.swift */; };
+		2A0DBFA5266265930092AD27 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA1266265930092AD27 /* Device+CoreDataProperties.swift */; };
+		2A0DBFA6266265930092AD27 /* Reading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA2266265930092AD27 /* Reading+CoreDataClass.swift */; };
+		2A0DBFA7266265930092AD27 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */; };
+		2A0DBFB226626A610092AD27 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A7D07C8D0EAB1F65CBEFE00 /* Pods-SensorDataApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataApp.release.xcconfig"; path = "Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp.release.xcconfig"; sourceTree = "<group>"; };
+		141493ABC64B50737538DBC9 /* Pods-SensorDataApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataApp.debug.xcconfig"; path = "Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2A0DBF6B266222DB0092AD27 /* SensorDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +38,16 @@
 		2A0DBF7A266222DD0092AD27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A0DBF7D266222DD0092AD27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A0DBF7F266222DD0092AD27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A0DBF8C266228FC0092AD27 /* DeviceCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceCollectionViewCell.swift; sourceTree = "<group>"; };
+		2A0DBF9126624A910092AD27 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		2A0DBF96266252EB0092AD27 /* DeviceListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListContracts.swift; sourceTree = "<group>"; };
+		2A0DBF9D266254B30092AD27 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		2A0DBFA0266265930092AD27 /* Device+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A0DBFA1266265930092AD27 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2A0DBFA2266265930092AD27 /* Reading+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorDataApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21C6B1CEB2F7BF4478A57186 /* Pods_SensorDataApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +67,8 @@
 			children = (
 				2A0DBF6D266222DB0092AD27 /* SensorDataApp */,
 				2A0DBF6C266222DB0092AD27 /* Products */,
+				303192E3ACAF24CF0F87CF43 /* Pods */,
+				94BBE9169F370144858FBA96 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,9 +83,13 @@
 		2A0DBF6D266222DB0092AD27 /* SensorDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DBFAB266266460092AD27 /* Models */,
+				2A0DBF95266250A70092AD27 /* Scenes */,
+				2A0DBF8A266228CD0092AD27 /* Commons */,
+				2A0DBF882662287E0092AD27 /* App */,
+				2A0DBF87266228740092AD27 /* API */,
 				2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */,
 				2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */,
-				2A0DBF72266222DB0092AD27 /* ViewController.swift */,
 				2A0DBF74266222DB0092AD27 /* Main.storyboard */,
 				2A0DBF7A266222DD0092AD27 /* Assets.xcassets */,
 				2A0DBF7C266222DD0092AD27 /* LaunchScreen.storyboard */,
@@ -70,6 +99,100 @@
 			path = SensorDataApp;
 			sourceTree = "<group>";
 		};
+		2A0DBF87266228740092AD27 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF9D266254B30092AD27 /* ApiService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2A0DBF882662287E0092AD27 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		2A0DBF8A266228CD0092AD27 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF9026624A7E0092AD27 /* APIConstants */,
+				2A0DBF8B266228D40092AD27 /* Views */,
+			);
+			path = Commons;
+			sourceTree = "<group>";
+		};
+		2A0DBF8B266228D40092AD27 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF8C266228FC0092AD27 /* DeviceCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2A0DBF9026624A7E0092AD27 /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF9126624A910092AD27 /* ApiConstants.swift */,
+			);
+			path = APIConstants;
+			sourceTree = "<group>";
+		};
+		2A0DBF95266250A70092AD27 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF9B266253070092AD27 /* DeviceDetail */,
+				2A0DBF9A266252EF0092AD27 /* DeviceList */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2A0DBF9A266252EF0092AD27 /* DeviceList */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBF96266252EB0092AD27 /* DeviceListContracts.swift */,
+				2A0DBF72266222DB0092AD27 /* ViewController.swift */,
+				2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */,
+			);
+			path = DeviceList;
+			sourceTree = "<group>";
+		};
+		2A0DBF9B266253070092AD27 /* DeviceDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DeviceDetail;
+			sourceTree = "<group>";
+		};
+		2A0DBFAB266266460092AD27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBFA0266265930092AD27 /* Device+CoreDataClass.swift */,
+				2A0DBFA1266265930092AD27 /* Device+CoreDataProperties.swift */,
+				2A0DBFA2266265930092AD27 /* Reading+CoreDataClass.swift */,
+				2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		303192E3ACAF24CF0F87CF43 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				141493ABC64B50737538DBC9 /* Pods-SensorDataApp.debug.xcconfig */,
+				0A7D07C8D0EAB1F65CBEFE00 /* Pods-SensorDataApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		94BBE9169F370144858FBA96 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2A0DBF82266222DD0092AD27 /* Build configuration list for PBXNativeTarget "SensorDataApp" */;
 			buildPhases = (
+				560A3420B01A96419BB435A2 /* [CP] Check Pods Manifest.lock */,
 				2A0DBF67266222DB0092AD27 /* Sources */,
 				2A0DBF68266222DB0092AD27 /* Frameworks */,
 				2A0DBF69266222DB0092AD27 /* Resources */,
+				8DF2BD1AD160E4DBB96894CF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -135,6 +260,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		560A3420B01A96419BB435A2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SensorDataApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DF2BD1AD160E4DBB96894CF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2A0DBF67266222DB0092AD27 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -142,7 +309,16 @@
 			files = (
 				2A0DBF73266222DB0092AD27 /* ViewController.swift in Sources */,
 				2A0DBF6F266222DB0092AD27 /* AppDelegate.swift in Sources */,
+				2A0DBF9226624A920092AD27 /* ApiConstants.swift in Sources */,
 				2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */,
+				2A0DBF97266252EB0092AD27 /* DeviceListContracts.swift in Sources */,
+				2A0DBF8D266228FC0092AD27 /* DeviceCollectionViewCell.swift in Sources */,
+				2A0DBFA4266265930092AD27 /* Device+CoreDataClass.swift in Sources */,
+				2A0DBFA5266265930092AD27 /* Device+CoreDataProperties.swift in Sources */,
+				2A0DBFA7266265930092AD27 /* Reading+CoreDataProperties.swift in Sources */,
+				2A0DBFB226626A610092AD27 /* DeviceListViewModel.swift in Sources */,
+				2A0DBFA6266265930092AD27 /* Reading+CoreDataClass.swift in Sources */,
+				2A0DBF9E266254B30092AD27 /* ApiService.swift in Sources */,
 				2A0DBF79266222DB0092AD27 /* SensorDataApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +463,7 @@
 		};
 		2A0DBF83266222DD0092AD27 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 141493ABC64B50737538DBC9 /* Pods-SensorDataApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -307,6 +484,7 @@
 		};
 		2A0DBF84266222DD0092AD27 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A7D07C8D0EAB1F65CBEFE00 /* Pods-SensorDataApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -11,5 +11,9 @@ import CoreData
 
 @objc(Device)
 public class Device: NSManagedObject {
+  enum CodingKeys: CodingKey {
+    case id,name
+  }
+
 
 }

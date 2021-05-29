@@ -8,5 +8,10 @@
 import UIKit
 
 class DeviceCollectionViewCell: UICollectionViewCell {
-    
+  @IBOutlet weak var deviceNameLabel: UILabel!
+
+  override func prepareForReuse() {
+    super.prepareForReuse()
+    backgroundColor = .systemBackground
+  }
 }
