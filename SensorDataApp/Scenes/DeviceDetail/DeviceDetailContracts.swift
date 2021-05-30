@@ -11,6 +11,7 @@ protocol DeviceDetailVMProtocol {
   var delegate: DeviceDetailVMDelegate? {get set}
   func fetchReadings()
   func calculateValues()
+  func fetchFor(predicate: NSPredicate?, sort: NSSortDescriptor?)
 }
 enum DeviceDetailVMOutput {
   case setLoading(Bool)
