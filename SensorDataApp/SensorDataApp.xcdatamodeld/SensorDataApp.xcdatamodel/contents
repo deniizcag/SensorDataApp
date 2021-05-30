@@ -3,6 +3,7 @@
     <entity name="Device" representedClassName="Device" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="readings" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Reading" inverseName="device" inverseEntity="Reading"/>
     </entity>
     <entity name="Reading" representedClassName="Reading" syncable="YES">
         <attribute name="created" optional="YES" attributeType="String"/>
@@ -10,9 +11,10 @@
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="device" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Device" inverseName="readings" inverseEntity="Device"/>
     </entity>
     <elements>
-        <element name="Device" positionX="-63" positionY="-18" width="128" height="73"/>
-        <element name="Reading" positionX="-54" positionY="9" width="128" height="118"/>
+        <element name="Device" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Reading" positionX="-54" positionY="9" width="128" height="133"/>
     </elements>
 </model>
