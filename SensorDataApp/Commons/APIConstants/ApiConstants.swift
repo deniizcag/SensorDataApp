@@ -8,7 +8,7 @@
 import Foundation
 
 final class ApiConstants {
-  static let getAllDevicesURL = baseURL() + "/devices"
+  static let getAllDevicesURL = baseURL() + "/devices/"
 
   static func getDeviceDetail(deviceID: String) -> String {
     return getAllDevicesURL + deviceID
