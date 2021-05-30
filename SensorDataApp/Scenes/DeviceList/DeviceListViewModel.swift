@@ -21,7 +21,6 @@ final class DeviceListViewModel: DeviceListVMProtocol {
   }
 
   func fetch() {
-    deleteAllData("Device")
     self.notify(.setLoading(true))
     service.fetchDeviceList(url: ApiConstants.getAllDevicesURL) { (result) in
       switch result {
