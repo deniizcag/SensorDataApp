@@ -30,10 +30,11 @@
 		2A602C1F2663B2D0001E9879 /* DeviceDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C1E2663B2D0001E9879 /* DeviceDetailContracts.swift */; };
 		2A602C222663B44F001E9879 /* DeviceDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C212663B44F001E9879 /* DeviceDetailViewModel.swift */; };
 		2A602C252663B68E001E9879 /* DeviceDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C242663B68E001E9879 /* DeviceDetailBuilder.swift */; };
-		2A602C4A2663EF88001E9879 /* Reading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C462663EF87001E9879 /* Reading+CoreDataClass.swift */; };
-		2A602C4B2663EF88001E9879 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C472663EF87001E9879 /* Device+CoreDataProperties.swift */; };
-		2A602C4C2663EF88001E9879 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C482663EF88001E9879 /* Reading+CoreDataProperties.swift */; };
-		2A602C4D2663EF88001E9879 /* Device+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C492663EF88001E9879 /* Device+CoreDataClass.swift */; };
+		2A602C6126640AD0001E9879 /* Reading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C5D26640AD0001E9879 /* Reading+CoreDataClass.swift */; };
+		2A602C6226640AD0001E9879 /* Device+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C5E26640AD0001E9879 /* Device+CoreDataClass.swift */; };
+		2A602C6326640AD0001E9879 /* Device+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C5F26640AD0001E9879 /* Device+CoreDataProperties.swift */; };
+		2A602C6426640AD0001E9879 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C6026640AD0001E9879 /* Reading+CoreDataProperties.swift */; };
+		2A602C6726643B49001E9879 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C6626643B49001E9879 /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,10 +64,11 @@
 		2A602C1E2663B2D0001E9879 /* DeviceDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailContracts.swift; sourceTree = "<group>"; };
 		2A602C212663B44F001E9879 /* DeviceDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewModel.swift; sourceTree = "<group>"; };
 		2A602C242663B68E001E9879 /* DeviceDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailBuilder.swift; sourceTree = "<group>"; };
-		2A602C462663EF87001E9879 /* Reading+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2A602C472663EF87001E9879 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2A602C482663EF88001E9879 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2A602C492663EF88001E9879 /* Device+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2A602C5D26640AD0001E9879 /* Reading+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		2A602C5E26640AD0001E9879 /* Device+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		2A602C5F26640AD0001E9879 /* Device+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Device+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		2A602C6026640AD0001E9879 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		2A602C6626643B49001E9879 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorDataApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -169,6 +171,7 @@
 			children = (
 				2A0DBF9B266253070092AD27 /* DeviceDetail */,
 				2A0DBF9A266252EF0092AD27 /* DeviceList */,
+				2A602C6626643B49001E9879 /* FilterViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -199,10 +202,10 @@
 		2A0DBFAB266266460092AD27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				2A602C462663EF87001E9879 /* Reading+CoreDataClass.swift */,
-				2A602C482663EF88001E9879 /* Reading+CoreDataProperties.swift */,
-				2A602C492663EF88001E9879 /* Device+CoreDataClass.swift */,
-				2A602C472663EF87001E9879 /* Device+CoreDataProperties.swift */,
+				2A602C5D26640AD0001E9879 /* Reading+CoreDataClass.swift */,
+				2A602C6026640AD0001E9879 /* Reading+CoreDataProperties.swift */,
+				2A602C5E26640AD0001E9879 /* Device+CoreDataClass.swift */,
+				2A602C5F26640AD0001E9879 /* Device+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -354,23 +357,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A0DBF73266222DB0092AD27 /* ViewController.swift in Sources */,
+				2A602C6426640AD0001E9879 /* Reading+CoreDataProperties.swift in Sources */,
 				2A0DBF6F266222DB0092AD27 /* AppDelegate.swift in Sources */,
 				2A0DBF9226624A920092AD27 /* ApiConstants.swift in Sources */,
+				2A602C6226640AD0001E9879 /* Device+CoreDataClass.swift in Sources */,
 				2A602C252663B68E001E9879 /* DeviceDetailBuilder.swift in Sources */,
-				2A602C4C2663EF88001E9879 /* Reading+CoreDataProperties.swift in Sources */,
-				2A602C4B2663EF88001E9879 /* Device+CoreDataProperties.swift in Sources */,
 				2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */,
-				2A602C4D2663EF88001E9879 /* Device+CoreDataClass.swift in Sources */,
 				2A0DBF97266252EB0092AD27 /* DeviceListContracts.swift in Sources */,
 				2A0DBFC42662816C0092AD27 /* BaseViewController.swift in Sources */,
 				2A0DBFBD26626E0C0092AD27 /* DeviceListBuilder.swift in Sources */,
 				2A0DBF8D266228FC0092AD27 /* DeviceCollectionViewCell.swift in Sources */,
 				2A602C1C2663B096001E9879 /* ReadingTableViewCell.swift in Sources */,
+				2A602C6326640AD0001E9879 /* Device+CoreDataProperties.swift in Sources */,
 				2A0DBFBA26626DF20092AD27 /* AppRouter.swift in Sources */,
 				2A602C192663AFCA001E9879 /* DeviceDetailViewController.swift in Sources */,
-				2A602C4A2663EF88001E9879 /* Reading+CoreDataClass.swift in Sources */,
+				2A602C6126640AD0001E9879 /* Reading+CoreDataClass.swift in Sources */,
 				2A0DBFB226626A610092AD27 /* DeviceListViewModel.swift in Sources */,
 				2A0DBFC02662770C0092AD27 /* CoreDataStack.swift in Sources */,
+				2A602C6726643B49001E9879 /* FilterViewController.swift in Sources */,
 				2A0DBF9E266254B30092AD27 /* ApiService.swift in Sources */,
 				2A0DBF79266222DB0092AD27 /* SensorDataApp.xcdatamodeld in Sources */,
 				2A602C222663B44F001E9879 /* DeviceDetailViewModel.swift in Sources */,

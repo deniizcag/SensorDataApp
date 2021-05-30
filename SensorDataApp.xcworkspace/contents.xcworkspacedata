@@ -2,16 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:SensorDataApp/Models/Reading+CoreDataClass.swift">
+      location = "group:Reading+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:SensorDataApp/Models/Reading+CoreDataProperties.swift">
+      location = "group:Reading+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:SensorDataApp/Models/Device+CoreDataClass.swift">
+      location = "group:Device+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:SensorDataApp/Models/Device+CoreDataProperties.swift">
+      location = "group:Device+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:SensorDataApp.xcodeproj">
