@@ -8,7 +8,8 @@
 import Foundation
 import CoreData
 final class DeviceListViewModel: DeviceListVMProtocol {
-  var delegate: DeviceListVMDelegate?
+  
+  weak var delegate: DeviceListVMDelegate?
   var service: FetchDeviceListServiceProtocol
   var coreDataStack: CoreDataStack
   var fetchRequest: NSFetchRequest<Device>!
@@ -87,7 +88,8 @@ final class DeviceListViewModel: DeviceListVMProtocol {
   }
 
   func selectDevice(at index: Int) {
-
+    let device = devices[index]
+    delegate?.navigateToDetailScreen(device: device)
   }
 
   func notify(_ outputs: DeviceListVMOutput) {
