@@ -1,8 +1,8 @@
 //
 //  Reading+CoreDataProperties.swift
-//  SensorDataApp
+//  
 //
-//  Created by DenizCagilligecit on 29.05.2021.
+//  Created by DenizCagilligecit on 30.05.2021.
 //
 //
 
@@ -16,14 +16,11 @@ extension Reading {
         return NSFetchRequest<Reading>(entityName: "Reading")
     }
 
-    @NSManaged public var id: Int16
-    @NSManaged public var deviceid: Int16
     @NSManaged public var created: String?
-    @NSManaged public var value: String?
+    @NSManaged public var deviceid: Int16
+    @NSManaged public var id: Int16
     @NSManaged public var type: String?
-
-}
-
-extension Reading : Identifiable {
+    @NSManaged public var value: String?
+    @NSManaged public var device: Device?
 
 }

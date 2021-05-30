@@ -1,8 +1,8 @@
 //
 //  Reading+CoreDataClass.swift
-//  SensorDataApp
+//  
 //
-//  Created by DenizCagilligecit on 29.05.2021.
+//  Created by DenizCagilligecit on 30.05.2021.
 //
 //
 
