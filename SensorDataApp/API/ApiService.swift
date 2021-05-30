@@ -8,34 +8,55 @@
 import Foundation
 import Alamofire
 protocol FetchDeviceListServiceProtocol {
-  func fetchDeviceList(url: String, completed: @escaping (Result<[Device],SDError>) -> Void)
-  func fetchDeviceReadings(url: String, completed: @escaping (Result<[Reading],SDError>) -> Void)
+  func fetchDeviceList(url: String, completed: @escaping (Result<[AnyObject],SDError>) -> Void)
+  func fetchDeviceReadings(url: String, completed: @escaping (Result<[AnyObject],SDError>) -> Void)
 }
 
 
-final class DeviceInfoService: FetchDeviceListServiceProtocol {
-  func fetchDeviceList(url: String, completed: @escaping (Result<[Device], SDError>) -> Void) {
+final class DeviceListService: FetchDeviceListServiceProtocol {
+
+
+  func fetchDeviceList(url: String, completed: @escaping (Result<[AnyObject], SDError>) -> Void) {
     AF.request(url, method: .get, parameters: nil).responseJSON { (response) in
       switch response.result {
       case .success:
         do {
+          print(response.data!)
+          let devices = try! JSONSerialization.jsonObject(with: response.data!, options: []) as! [AnyObject]
+          completed(.success(devices))
 
-          let jsonDict = try! JSONSerialization.jsonObject(with: response.data!, options: [.allowFragments]) as! [String: AnyObject]
-          print(jsonDict)
         }
         catch {
           completed(.failure(.AFError))
         }
 
       case .failure(let error):
-        break
+        completed(.failure(.networkError))
+        
       }
     }
     
   }
 
-  func fetchDeviceReadings(url: String, completed: @escaping (Result<[Reading], SDError>) -> Void) {
+  func fetchDeviceReadings(url: String, completed: @escaping (Result<[AnyObject], SDError>) -> Void) {
+    AF.request(url, method: .get, parameters: nil).responseJSON { (response) in
+      switch response.result {
+      case .success:
+        do {
+          print(response.data!)
+          let readings = try! JSONSerialization.jsonObject(with: response.data!, options: []) as! [AnyObject]
+          completed(.success(readings))
+        }
+        catch {
+          completed(.failure(.AFError))
+        }
 
+      case .failure(let error):
+        completed(.failure(.networkError))
+      }
+
+
+    }
   }
 
 
@@ -44,6 +65,7 @@ final class DeviceInfoService: FetchDeviceListServiceProtocol {
 
 
 }
+
 
 
 enum SDError: Error {
