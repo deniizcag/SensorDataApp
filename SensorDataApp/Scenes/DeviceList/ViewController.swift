@@ -37,6 +37,9 @@ extension DeviceListViewController: UICollectionViewDelegate, UICollectionViewDa
     cell.deviceNameLabel.text = device.name
     return cell
   }
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    viewModel?.selectDevice(at: indexPath.row)
+  }
 
 
 }
@@ -50,6 +53,11 @@ extension DeviceListViewController: UICollectionViewDelegateFlowLayout {
      }
 }
 extension DeviceListViewController: DeviceListVMDelegate {
+  func navigateToDetailScreen(device: Device) {
+    let detailViewController = DeviceDetailBuilder.make(device: device)
+    navigationController?.pushViewController(detailViewController, animated: true)
+  }
+
   func handleViewModelOutputs(_ output: DeviceListVMOutput) {
     switch output {
     case .showDeviceList(let devices):
@@ -75,9 +83,6 @@ extension DeviceListViewController: DeviceListVMDelegate {
 
   }
 
-  func navigateToDetailScreen() {
-
-  }
 
 
 }

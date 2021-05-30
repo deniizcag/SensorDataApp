@@ -19,5 +19,5 @@ enum DeviceListVMOutput {
 }
 protocol DeviceListVMDelegate: class {
   func handleViewModelOutputs(_ output: DeviceListVMOutput)
-  func navigateToDetailScreen()
+  func navigateToDetailScreen(device: Device)
 }
