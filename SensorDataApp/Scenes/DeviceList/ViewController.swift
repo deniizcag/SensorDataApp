@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class DeviceListViewController: BaseViewController {
 
-  var devices = ["Device 1","Device 2","Device 3","Device 4","Device 5"]
+  var devices = [Device]()
 
   var viewModel: DeviceListVMProtocol? {
     didSet {
@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     collectionView.delegate = self
     collectionView.dataSource = self
-   
+    viewModel?.fetch()
   }
 
 
 }
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension DeviceListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return devices.count
   }
@@ -34,13 +34,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let device = devices[indexPath.row]
     let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "deviceCell", for: indexPath) as! DeviceCollectionViewCell
-    cell.deviceNameLabel.text = device
+    cell.deviceNameLabel.text = device.name
     return cell
   }
 
 
 }
-extension ViewController: UICollectionViewDelegateFlowLayout {
+extension DeviceListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
          let width = self.view.frame.width - 32.0 * 2
@@ -49,8 +49,29 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
          return CGSize(width: width, height: height)
      }
 }
-extension ViewController: DeviceListVMDelegate {
+extension DeviceListViewController: DeviceListVMDelegate {
   func handleViewModelOutputs(_ output: DeviceListVMOutput) {
+    switch output {
+    case .showDeviceList(let devices):
+      if devices.isEmpty {
+        showAlert(message: "Oops. Something went wrong!..")
+      }
+      else {
+        self.devices = devices
+        collectionView.reloadData()
+      }
+
+    case .setLoading(let isLoading):
+      if isLoading {
+        showSpinner()
+      }
+      else {
+        removeSpinner()
+      }
+
+    default:
+      break
+    }
 
   }
 
