@@ -24,6 +24,13 @@
 		2A0DBFA6266265930092AD27 /* Reading+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA2266265930092AD27 /* Reading+CoreDataClass.swift */; };
 		2A0DBFA7266265930092AD27 /* Reading+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */; };
 		2A0DBFB226626A610092AD27 /* DeviceListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */; };
+		2A0DBFB726626DA40092AD27 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFB626626DA40092AD27 /* AppContainer.swift */; };
+		2A0DBFBA26626DF20092AD27 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFB926626DF20092AD27 /* AppRouter.swift */; };
+		2A0DBFBD26626E0C0092AD27 /* DeviceListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFBC26626E0C0092AD27 /* DeviceListBuilder.swift */; };
+		2A0DBFC02662770C0092AD27 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFBF2662770C0092AD27 /* CoreDataStack.swift */; };
+		2A0DBFC42662816C0092AD27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFC32662816C0092AD27 /* BaseViewController.swift */; };
+		2A602C192663AFCA001E9879 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C182663AFCA001E9879 /* DeviceDetailViewController.swift */; };
+		2A602C1C2663B096001E9879 /* ReadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C1B2663B096001E9879 /* ReadingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +54,13 @@
 		2A0DBFA2266265930092AD27 /* Reading+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reading+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewModel.swift; sourceTree = "<group>"; };
+		2A0DBFB626626DA40092AD27 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		2A0DBFB926626DF20092AD27 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		2A0DBFBC26626E0C0092AD27 /* DeviceListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListBuilder.swift; sourceTree = "<group>"; };
+		2A0DBFBF2662770C0092AD27 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		2A0DBFC32662816C0092AD27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2A602C182663AFCA001E9879 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
+		2A602C1B2663B096001E9879 /* ReadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTableViewCell.swift; sourceTree = "<group>"; };
 		9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SensorDataApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -83,6 +97,7 @@
 		2A0DBF6D266222DB0092AD27 /* SensorDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DBFB526626D940092AD27 /* New Group */,
 				2A0DBFAB266266460092AD27 /* Models */,
 				2A0DBF95266250A70092AD27 /* Scenes */,
 				2A0DBF8A266228CD0092AD27 /* Commons */,
@@ -95,6 +110,7 @@
 				2A0DBF7C266222DD0092AD27 /* LaunchScreen.storyboard */,
 				2A0DBF7F266222DD0092AD27 /* Info.plist */,
 				2A0DBF77266222DB0092AD27 /* SensorDataApp.xcdatamodeld */,
+				2A0DBFBF2662770C0092AD27 /* CoreDataStack.swift */,
 			);
 			path = SensorDataApp;
 			sourceTree = "<group>";
@@ -110,6 +126,8 @@
 		2A0DBF882662287E0092AD27 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DBFB626626DA40092AD27 /* AppContainer.swift */,
+				2A0DBFB926626DF20092AD27 /* AppRouter.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -117,6 +135,7 @@
 		2A0DBF8A266228CD0092AD27 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				2A0DBFC22662814E0092AD27 /* Base */,
 				2A0DBF9026624A7E0092AD27 /* APIConstants */,
 				2A0DBF8B266228D40092AD27 /* Views */,
 			);
@@ -154,6 +173,7 @@
 				2A0DBF96266252EB0092AD27 /* DeviceListContracts.swift */,
 				2A0DBF72266222DB0092AD27 /* ViewController.swift */,
 				2A0DBFB126626A610092AD27 /* DeviceListViewModel.swift */,
+				2A0DBFBC26626E0C0092AD27 /* DeviceListBuilder.swift */,
 			);
 			path = DeviceList;
 			sourceTree = "<group>";
@@ -161,6 +181,8 @@
 		2A0DBF9B266253070092AD27 /* DeviceDetail */ = {
 			isa = PBXGroup;
 			children = (
+				2A602C182663AFCA001E9879 /* DeviceDetailViewController.swift */,
+				2A602C1B2663B096001E9879 /* ReadingTableViewCell.swift */,
 			);
 			path = DeviceDetail;
 			sourceTree = "<group>";
@@ -174,6 +196,21 @@
 				2A0DBFA3266265930092AD27 /* Reading+CoreDataProperties.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2A0DBFB526626D940092AD27 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		2A0DBFC22662814E0092AD27 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2A0DBFC32662816C0092AD27 /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		303192E3ACAF24CF0F87CF43 /* Pods */ = {
@@ -312,14 +349,21 @@
 				2A0DBF9226624A920092AD27 /* ApiConstants.swift in Sources */,
 				2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */,
 				2A0DBF97266252EB0092AD27 /* DeviceListContracts.swift in Sources */,
+				2A0DBFC42662816C0092AD27 /* BaseViewController.swift in Sources */,
+				2A0DBFBD26626E0C0092AD27 /* DeviceListBuilder.swift in Sources */,
 				2A0DBF8D266228FC0092AD27 /* DeviceCollectionViewCell.swift in Sources */,
 				2A0DBFA4266265930092AD27 /* Device+CoreDataClass.swift in Sources */,
 				2A0DBFA5266265930092AD27 /* Device+CoreDataProperties.swift in Sources */,
+				2A602C1C2663B096001E9879 /* ReadingTableViewCell.swift in Sources */,
+				2A0DBFBA26626DF20092AD27 /* AppRouter.swift in Sources */,
 				2A0DBFA7266265930092AD27 /* Reading+CoreDataProperties.swift in Sources */,
+				2A602C192663AFCA001E9879 /* DeviceDetailViewController.swift in Sources */,
 				2A0DBFB226626A610092AD27 /* DeviceListViewModel.swift in Sources */,
+				2A0DBFC02662770C0092AD27 /* CoreDataStack.swift in Sources */,
 				2A0DBFA6266265930092AD27 /* Reading+CoreDataClass.swift in Sources */,
 				2A0DBF9E266254B30092AD27 /* ApiService.swift in Sources */,
 				2A0DBF79266222DB0092AD27 /* SensorDataApp.xcdatamodeld in Sources */,
+				2A0DBFB726626DA40092AD27 /* AppContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
