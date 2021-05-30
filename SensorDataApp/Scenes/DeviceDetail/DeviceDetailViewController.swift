@@ -10,6 +10,8 @@ import UIKit
 class DeviceDetailViewController: BaseViewController {
 
   var readings = [Reading]()
+  private let filterViewControllerSegueIdentifier = "toFilterViewController"
+
   @IBOutlet weak var tempMaxLabel: UILabel!
   @IBOutlet weak var tempMinLabel: UILabel!
   @IBOutlet weak var tempAvgLabel: UILabel!
@@ -33,9 +35,22 @@ class DeviceDetailViewController: BaseViewController {
     viewModel?.fetchReadings()
     tableView.delegate = self
     tableView.dataSource = self
-    tableView.rowHeight = 200
+    tableView.rowHeight = 130
 
   }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+      guard segue.identifier == filterViewControllerSegueIdentifier, let navController = segue.destination as? UINavigationController, let filterVC = navController.topViewController as? FilterViewController else { return }
+      filterVC.coreDataStack = CoreDataStack(modelName: "SensorDataApp")
+      filterVC.delegate = self
+  }
+
+}
+extension DeviceDetailViewController: FilterViewControllerDelegate {
+  func filterViewController(filter: FilterViewController, didSelectPredicate predicate: NSPredicate?, sortDescriptor: NSSortDescriptor?) {
+    viewModel?.fetchFor(predicate: predicate, sort: sortDescriptor)
+    
+  }
+
 
 }
 extension DeviceDetailViewController: UITableViewDelegate,UITableViewDataSource {
@@ -56,6 +71,9 @@ extension DeviceDetailViewController: DeviceDetailVMDelegate {
     case .showReadingList(let readings):
       self.readings = readings
       tableView.reloadData()
+      if readings.isEmpty {
+        self.showAlert(message: "There is no available data for this device!")
+      }
     case .updateValues(let dataType, let values):
       switch dataType {
       case .Temperature:
@@ -79,10 +97,9 @@ extension DeviceDetailViewController: DeviceDetailVMDelegate {
       else {
         removeSpinner()
       }
-    case .updateTitle("test"):
-      print("test")
-    case .updateTitle(_):
-      break
+
+    case .updateTitle(let title):
+      self.title = title
     }
   }
 
