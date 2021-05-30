@@ -9,15 +9,19 @@ import UIKit
 
 class ReadingTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+  @IBOutlet weak var sensorTypeLabel: UILabel!
+  @IBOutlet weak var sensorValueLabel: UILabel!
+  @IBOutlet weak var sensorLastActiveLabel: UILabel!
+  @IBOutlet weak var sensorIdLabel: UILabel!
 
-        // Configure the view for the selected state
-    }
+  
+
+  func set(reading: Reading) {
+    self.sensorIdLabel.text = String(reading.id)
+    self.sensorTypeLabel.text = reading.type
+    self.sensorValueLabel.text = reading.value
+    self.sensorLastActiveLabel.text = reading.created
+  }
 
 }
