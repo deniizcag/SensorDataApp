@@ -46,7 +46,7 @@ class FilterViewController: UITableViewController {
   }
   func selectTimeSorting(isAscending: Bool) -> NSSortDescriptor {
     let compareSelector = #selector(NSString.localizedStandardCompare(_:))
-    return NSSortDescriptor(key: #keyPath(Reading.value),
+    return NSSortDescriptor(key: #keyPath(Reading.created),
                             ascending: isAscending,
                             selector: compareSelector)
   }
@@ -73,14 +73,14 @@ extension FilterViewController {
       selectedPredicate = selectType(type: "humidity")
     case "Air Quality":
       selectedPredicate = selectType(type: "air_quality")
-    case "Value (Ascending - Desending)":
-      selectedSortDescriptor = selectValueSorting(isAscending: true)
-    case "Value (Descending -Ascending)":
+    case "Value: High to Low":
       selectedSortDescriptor = selectValueSorting(isAscending: false)
-    case "Time (Newest - Oldest)":
-      selectedSortDescriptor = selectTimeSorting(isAscending: true)
-    case "Time (Oldest - Newest)":
+    case "Value: Low to High":
+      selectedSortDescriptor = selectValueSorting(isAscending: true)
+    case "Time: New to Old":
       selectedSortDescriptor = selectTimeSorting(isAscending: false)
+    case "Time: Old to New":
+      selectedSortDescriptor = selectTimeSorting(isAscending: true)
      default:
       break
     }
