@@ -19,9 +19,9 @@ class ReadingTableViewCell: UITableViewCell {
 
   func set(reading: Reading) {
     self.sensorIdLabel.text = String(reading.id)
-    self.sensorTypeLabel.text = reading.type
+    self.sensorTypeLabel.text = reading.type?.cellFormat()
     self.sensorValueLabel.text = reading.value
-    self.sensorLastActiveLabel.text = reading.created
+    self.sensorLastActiveLabel.text = reading.created?.formatDate()
   }
 
 }
