@@ -24,7 +24,8 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
   }
   func fetchReadings() {
     self.notify(.setLoading(true))
-    service.fetchDeviceReadings(url: ApiConstants.getDeviceReadings(deviceID: String(device.id))) { (result) in
+    service.fetchDeviceReadings(url: ApiConstants.getDeviceReadings(deviceID: String(device.id))) { [weak self] (result) in
+      guard let self = self else { return }
       switch result {
       case .success(let readings):
         //print(readings)

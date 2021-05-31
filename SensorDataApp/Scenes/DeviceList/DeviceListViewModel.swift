@@ -22,7 +22,8 @@ final class DeviceListViewModel: DeviceListVMProtocol {
 
   func fetch() {
     self.notify(.setLoading(true))
-    service.fetchDeviceList(url: ApiConstants.getAllDevicesURL) { (result) in
+    service.fetchDeviceList(url: ApiConstants.getAllDevicesURL) { [weak self] (result) in
+      guard let self = self else { return }
       switch result {
       case .success(let devices):
         self.saveLocally(devices: devices)
