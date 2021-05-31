@@ -136,10 +136,13 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
     for reading in readings {
       if let id = reading["id"] as? Int16,
          let value = reading["value"] as? String,
-         let type = reading["type"] as? String,
+         var type = reading["type"] as? String,
          let created = reading["created"] as? String,
          let deviceId = reading["deviceid"] as? Int16
          {
+        if type == "tempurature" {
+          type = "temperature"
+        }
           someEntityExists(id: id,type: type,value: value,created: created, deviceId: deviceId)
       }
 
