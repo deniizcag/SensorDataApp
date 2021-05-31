@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DeviceListViewController.swift
 //  SensorDataApp
 //
 //  Created by DenizCagilligecit on 29.05.2021.
@@ -17,11 +17,16 @@ class DeviceListViewController: BaseViewController {
     }
   }
   @IBOutlet weak var collectionView: UICollectionView!
+
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    configureCollectionView()
+    viewModel?.fetch()
+  }
+  fileprivate func configureCollectionView() {
     collectionView.delegate = self
     collectionView.dataSource = self
-    viewModel?.fetch()
   }
 
 
