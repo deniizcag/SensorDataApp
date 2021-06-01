@@ -21,7 +21,6 @@ final class DeviceListService: FetchDeviceListServiceProtocol {
       switch response.result {
       case .success:
         do {
-          print(response.data!)
           let devices = try! JSONSerialization.jsonObject(with: response.data!, options: []) as! [AnyObject]
           completed(.success(devices))
 
@@ -43,7 +42,6 @@ final class DeviceListService: FetchDeviceListServiceProtocol {
       switch response.result {
       case .success:
         do {
-          print(response.data!)
           let readings = try! JSONSerialization.jsonObject(with: response.data!, options: []) as! [AnyObject]
           completed(.success(readings))
         }
