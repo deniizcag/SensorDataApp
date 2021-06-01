@@ -13,7 +13,7 @@ final class DeviceListViewModel: DeviceListVMProtocol {
   var service: FetchDeviceListServiceProtocol
   var coreDataStack: CoreDataStack
   var fetchRequest: NSFetchRequest<Device>!
-  var devices: [Device] = []
+  var devices: [Device]?
 
   init(service: FetchDeviceListServiceProtocol,coreDataStack: CoreDataStack) {
     self.service = service
@@ -29,7 +29,6 @@ final class DeviceListViewModel: DeviceListVMProtocol {
         self.saveLocally(devices: devices)
 
       case .failure(let error):
-        print(error)
         self.fetchFromCoreData()
       }
     }
@@ -46,7 +45,6 @@ final class DeviceListViewModel: DeviceListVMProtocol {
         let deviceObject = Device(entity: deviceEntity, insertInto: coreDataStack.managedContext)
         deviceObject.id = id
         deviceObject.name = name
-
       }
 
     }
@@ -68,7 +66,7 @@ final class DeviceListViewModel: DeviceListVMProtocol {
           }
         try coreDataStack.managedContext.save()
       } catch let error {
-          print("Detele all data in \(entity) error :", error)
+        NSLog("Detele all data in \(entity) error :\(error)")
       }
   }
   func someEntityExists(id: Int16) -> Bool {
@@ -81,15 +79,15 @@ final class DeviceListViewModel: DeviceListVMProtocol {
         results = try coreDataStack.managedContext.fetch(fetchRequest)
       }
       catch {
-          print("error executing fetch request: \(error)")
+        NSLog("error executing fetch request: \(error)")
       }
 
       return results.count > 0
   }
 
   func selectDevice(at index: Int) {
-    let device = devices[index]
-    delegate?.navigateToDetailScreen(device: device)
+    let device = devices?[index]
+    delegate?.navigateToDetailScreen(device: device!)
   }
 
   func notify(_ outputs: DeviceListVMOutput) {
@@ -103,11 +101,17 @@ final class DeviceListViewModel: DeviceListVMProtocol {
     fetchRequest = Device.fetchRequest()
     do {
       devices = try coreDataStack.managedContext.fetch(fetchRequest)
-      self.notify(.showDeviceList(devices))
+      if devices?.count == 0 {
+        self.notify(.showDeviceList(nil))
+      }
+      else {
+        self.notify(.showDeviceList(devices!))
+
+      }
       self.notify(.setLoading(false))
     }
     catch {
-      self.notify(.showDeviceList([]))
+      self.notify(.showDeviceList(nil))
     }
 
 
