@@ -18,21 +18,22 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
   var fetchRequestForDevice: NSFetchRequest<Device>!
   var readings: [Reading] = []
   var currentDevice: Device!
+  var tempValues = [Double]()
+  var humValues = [Double]()
+  var airValues = [Double]()
+
   init(service: FetchDeviceListServiceProtocol,coreDataStack: CoreDataStack) {
     self.service = service
     self.coreDataStack = coreDataStack
   }
   func fetchReadings() {
     self.notify(.setLoading(true))
-    service.fetchDeviceReadings(url: ApiConstants.getDeviceReadings(deviceID: String(device.id))) { [weak self] (result) in
+    service.fetchDeviceReadings(url: ApiConstants.getDeviceReadings(deviceID: String(device.id ))) { [weak self] (result) in
       guard let self = self else { return }
       switch result {
       case .success(let readings):
-        //print(readings)
         self.saveLocally(readings: readings)
-        //self.save(readings: readings)
       case .failure(let error):
-        print(error)
         self.fetchFromCoreData()
       }
     }
@@ -50,11 +51,6 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
       fetchRequest.predicate =  andPredicate
     }
 
-
-
-
-
-
     if let sort = sort {
       fetchRequest.sortDescriptors = [sort]
 
@@ -64,7 +60,7 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
         readings = try coreDataStack.managedContext.fetch(fetchRequest)
       self.notify(.showReadingList(readings))
     } catch let error as NSError {
-        print("Could not fetch \(error), \(error.userInfo)")
+        NSLog("Could not fetch \(error), \(error.userInfo)")
     }
 
   }
@@ -80,57 +76,9 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
           }
         try coreDataStack.managedContext.save()
       } catch let error {
-          print("Detele all data in \(entity) error :", error)
+        NSLog("Detele all data in \(entity) error :\(error)")
       }
   }
-//  func save(readings:  [AnyObject]) {
-//
-//    fetchRequestForDevice = Device.fetchRequest()
-//    fetchRequestForDevice.predicate = NSPredicate(format: "id == \(device.id)")
-//    do {
-//      let results = try coreDataStack.managedContext.fetch(fetchRequestForDevice)
-//        if results.count > 0 {
-//            //Fido found, use fido
-//            currentDevice = results.first
-//        } else {
-//
-//        }
-//    } catch let error as NSError {
-//        print("Fetch error: \(error) description: \(error.userInfo)")
-//    }
-//    let readingEntity = NSEntityDescription.entity(forEntityName: "Reading", in: coreDataStack.managedContext)!
-//    for reading in readings {
-//      if let id = reading["id"] as? Int16,
-//         let value = reading["value"] as? String,
-//         let type = reading["type"] as? String,
-//         let created = reading["created"] as? String,
-//         let deviceId = reading["deviceid"] as? Int16,
-//         someEntityExists(id: deviceId)
-//         {
-//        let readingObject = Reading(entity: readingEntity, insertInto: coreDataStack.managedContext)
-//        readingObject.id = id
-//        readingObject.value = value
-//        readingObject.created = created
-//        readingObject.type = type
-//        readingObject.deviceid = deviceId
-//
-//        if let device = currentDevice,
-//           let readings = device.readings?.mutableCopy() as? NSMutableOrderedSet {
-//          readings.add(readingObject)
-//          device.readings = readings
-//        }
-//      }
-//
-//      coreDataStack.saveContext()
-//
-//    }
-//
-//    fetchFromCoreData2()
-//    calculateValues()
-//
-//
-//  }
-
 
   func saveLocally(readings: [AnyObject]) {
 
@@ -186,7 +134,7 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
         coreDataStack.saveContext()
       }
       catch {
-          print("error executing fetch request: \(error)")
+        NSLog("error executing fetch request: \(error)")
       }
 
 
@@ -194,7 +142,6 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
   func fetchFromCoreData() {
     let fetchRequest = NSFetchRequest<Reading>(entityName: "Reading")
     let predicateIsEnabled = NSPredicate(format: "deviceid == \(device.id)")
-
 
       fetchRequest.predicate = predicateIsEnabled
 
@@ -209,28 +156,14 @@ final class DeviceDetailViewModel: DeviceDetailVMProtocol {
     self.notify(.setLoading(false))
 
   }
-  func fetchFromCoreData2() {
-    fetchRequestForDevice = Device.fetchRequest()
-    fetchRequestForDevice.predicate = NSPredicate(format: "id == \(device.id)")
-    do {
-      let results = try coreDataStack.managedContext.fetch(fetchRequestForDevice)
-        if results.count > 0 {
-            //Fido found, use fido
 
-        } else {
-
-        }
-    } catch let error as NSError {
-        print("Fetch error: \(error) description: \(error.userInfo)")
-    }
-  }
 
   func calculateValues() {
-    let tempValues = readings.filter {$0.type == "tempurature" || $0.type == "temperature"}.map {($0.value ?? "0") }.doubleArray
+     tempValues = readings.filter {$0.type == "tempurature" || $0.type == "temperature"}.map {($0.value ?? "0") }.doubleArray
     self.notify(.updateValues(.Temperature, [tempValues.min() ?? 0, tempValues.max() ?? 0,tempValues.average ]))
-    let humValues = readings.filter {$0.type == "humidity"}.map {($0.value ?? "0") }.doubleArray
+     humValues = readings.filter {$0.type == "humidity"}.map {($0.value ?? "0") }.doubleArray
     self.notify(.updateValues(.Humidity, [humValues.min() ?? 0, humValues.max() ?? 0,humValues.average ]))
-    let airValues = readings.filter {$0.type == "air_quality"}.map {($0.value ?? "0") }.doubleArray
+     airValues = readings.filter {$0.type == "air_quality"}.map {($0.value ?? "0") }.doubleArray
     self.notify(.updateValues(.AirQuality, [airValues.min() ?? 0, airValues.max() ?? 0,airValues.average ]))
 
   }
