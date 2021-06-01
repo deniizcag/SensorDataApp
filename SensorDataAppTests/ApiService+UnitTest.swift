@@ -6,27 +6,42 @@
 //
 
 import XCTest
-
+@testable import SensorDataApp
 class ApiService_UnitTest: XCTestCase {
+  var service: DeviceListService!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  override func setUp() {
+    super.setUp()
+  }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  func testReturnDetails() {
+    let e = expectation(description: "Error")
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    service = DeviceListService()
+    service.fetchDeviceList(url: ApiConstants.getAllDevicesURL) { (result) in
+      switch result {
+      case .success:
+        e.fulfill()
+      case .failure:
+        break
+      }
     }
+    waitForExpectations(timeout: 5.0, handler: nil)
+  }
+  func testReturnReadings() {
+    let e = expectation(description: "Error")
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    service = DeviceListService()
+    service.fetchDeviceReadings(url: ApiConstants.getDeviceReadings(deviceID: "1")) { (result) in
+      switch result {
+      case .success:
+        e.fulfill()
+      case .failure:
+        break
+      }
     }
+    waitForExpectations(timeout: 5.0, handler: nil)
+
+  }
 
 }
