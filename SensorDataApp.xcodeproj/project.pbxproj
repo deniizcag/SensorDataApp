@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		21C6B1CEB2F7BF4478A57186 /* Pods_SensorDataApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9734824C4FCE938BE52A38F1 /* Pods_SensorDataApp.framework */; };
 		2A0DBF6F266222DB0092AD27 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */; };
-		2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */; };
 		2A0DBF73266222DB0092AD27 /* DeviceListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF72266222DB0092AD27 /* DeviceListViewController.swift */; };
 		2A0DBF76266222DB0092AD27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0DBF74266222DB0092AD27 /* Main.storyboard */; };
 		2A0DBF79266222DB0092AD27 /* SensorDataApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBF77266222DB0092AD27 /* SensorDataApp.xcdatamodeld */; };
@@ -26,6 +25,10 @@
 		2A0DBFC02662770C0092AD27 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFBF2662770C0092AD27 /* CoreDataStack.swift */; };
 		2A0DBFC42662816C0092AD27 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0DBFC32662816C0092AD27 /* BaseViewController.swift */; };
 		2A199DEB2665428D007E279E /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A199DEA2665428D007E279E /* String+Extensions.swift */; };
+		2A199DEF26654E49007E279E /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A199DEE26654E49007E279E /* Double+Extensions.swift */; };
+		2A199E04266551FF007E279E /* DeviceListViewModel+UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A199E03266551FF007E279E /* DeviceListViewModel+UnitTest.swift */; };
+		2A199E0826655DC6007E279E /* DeviceDetailViewModel+UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A199E0726655DC6007E279E /* DeviceDetailViewModel+UnitTest.swift */; };
+		2A199E0E26656383007E279E /* ApiService+UnitTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A199E0D26656383007E279E /* ApiService+UnitTest.swift */; };
 		2A602C192663AFCA001E9879 /* DeviceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C182663AFCA001E9879 /* DeviceDetailViewController.swift */; };
 		2A602C1C2663B096001E9879 /* ReadingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C1B2663B096001E9879 /* ReadingTableViewCell.swift */; };
 		2A602C1F2663B2D0001E9879 /* DeviceDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C1E2663B2D0001E9879 /* DeviceDetailContracts.swift */; };
@@ -38,12 +41,21 @@
 		2A602C6726643B49001E9879 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A602C6626643B49001E9879 /* FilterViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		2A199DFA26655176007E279E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A0DBF63266222DB0092AD27 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A0DBF6A266222DB0092AD27;
+			remoteInfo = SensorDataApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A7D07C8D0EAB1F65CBEFE00 /* Pods-SensorDataApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataApp.release.xcconfig"; path = "Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp.release.xcconfig"; sourceTree = "<group>"; };
 		141493ABC64B50737538DBC9 /* Pods-SensorDataApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SensorDataApp.debug.xcconfig"; path = "Target Support Files/Pods-SensorDataApp/Pods-SensorDataApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2A0DBF6B266222DB0092AD27 /* SensorDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SensorDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2A0DBF72266222DB0092AD27 /* DeviceListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceListViewController.swift; sourceTree = "<group>"; };
 		2A0DBF75266222DB0092AD27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2A0DBF78266222DB0092AD27 /* SensorDataApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SensorDataApp.xcdatamodel; sourceTree = "<group>"; };
@@ -61,6 +73,12 @@
 		2A0DBFBF2662770C0092AD27 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		2A0DBFC32662816C0092AD27 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		2A199DEA2665428D007E279E /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		2A199DEE26654E49007E279E /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		2A199DF526655176007E279E /* SensorDataAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SensorDataAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A199DF926655176007E279E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A199E03266551FF007E279E /* DeviceListViewModel+UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceListViewModel+UnitTest.swift"; sourceTree = "<group>"; };
+		2A199E0726655DC6007E279E /* DeviceDetailViewModel+UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DeviceDetailViewModel+UnitTest.swift"; sourceTree = "<group>"; };
+		2A199E0D26656383007E279E /* ApiService+UnitTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiService+UnitTest.swift"; sourceTree = "<group>"; };
 		2A602C182663AFCA001E9879 /* DeviceDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailViewController.swift; sourceTree = "<group>"; };
 		2A602C1B2663B096001E9879 /* ReadingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadingTableViewCell.swift; sourceTree = "<group>"; };
 		2A602C1E2663B2D0001E9879 /* DeviceDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailContracts.swift; sourceTree = "<group>"; };
@@ -83,6 +101,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A199DF226655176007E279E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -90,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				2A0DBF6D266222DB0092AD27 /* SensorDataApp */,
+				2A199DF626655176007E279E /* SensorDataAppTests */,
 				2A0DBF6C266222DB0092AD27 /* Products */,
 				303192E3ACAF24CF0F87CF43 /* Pods */,
 				94BBE9169F370144858FBA96 /* Frameworks */,
@@ -100,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				2A0DBF6B266222DB0092AD27 /* SensorDataApp.app */,
+				2A199DF526655176007E279E /* SensorDataAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,7 +141,6 @@
 				2A0DBF882662287E0092AD27 /* App */,
 				2A0DBF87266228740092AD27 /* API */,
 				2A0DBF6E266222DB0092AD27 /* AppDelegate.swift */,
-				2A0DBF70266222DB0092AD27 /* SceneDelegate.swift */,
 				2A0DBF74266222DB0092AD27 /* Main.storyboard */,
 				2A0DBF7A266222DD0092AD27 /* Assets.xcassets */,
 				2A0DBF7C266222DD0092AD27 /* LaunchScreen.storyboard */,
@@ -232,8 +258,20 @@
 			isa = PBXGroup;
 			children = (
 				2A199DEA2665428D007E279E /* String+Extensions.swift */,
+				2A199DEE26654E49007E279E /* Double+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2A199DF626655176007E279E /* SensorDataAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A199DF926655176007E279E /* Info.plist */,
+				2A199E03266551FF007E279E /* DeviceListViewModel+UnitTest.swift */,
+				2A199E0726655DC6007E279E /* DeviceDetailViewModel+UnitTest.swift */,
+				2A199E0D26656383007E279E /* ApiService+UnitTest.swift */,
+			);
+			path = SensorDataAppTests;
 			sourceTree = "<group>";
 		};
 		303192E3ACAF24CF0F87CF43 /* Pods */ = {
@@ -275,6 +313,24 @@
 			productReference = 2A0DBF6B266222DB0092AD27 /* SensorDataApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		2A199DF426655176007E279E /* SensorDataAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A199DFC26655176007E279E /* Build configuration list for PBXNativeTarget "SensorDataAppTests" */;
+			buildPhases = (
+				2A199DF126655176007E279E /* Sources */,
+				2A199DF226655176007E279E /* Frameworks */,
+				2A199DF326655176007E279E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A199DFB26655176007E279E /* PBXTargetDependency */,
+			);
+			name = SensorDataAppTests;
+			productName = SensorDataAppTests;
+			productReference = 2A199DF526655176007E279E /* SensorDataAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -286,6 +342,11 @@
 				TargetAttributes = {
 					2A0DBF6A266222DB0092AD27 = {
 						CreatedOnToolsVersion = 12.3;
+					};
+					2A199DF426655176007E279E = {
+						CreatedOnToolsVersion = 12.3;
+						LastSwiftMigration = 1230;
+						TestTargetID = 2A0DBF6A266222DB0092AD27;
 					};
 				};
 			};
@@ -303,6 +364,7 @@
 			projectRoot = "";
 			targets = (
 				2A0DBF6A266222DB0092AD27 /* SensorDataApp */,
+				2A199DF426655176007E279E /* SensorDataAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -315,6 +377,13 @@
 				2A0DBF7E266222DD0092AD27 /* LaunchScreen.storyboard in Resources */,
 				2A0DBF7B266222DD0092AD27 /* Assets.xcassets in Resources */,
 				2A0DBF76266222DB0092AD27 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A199DF326655176007E279E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,7 +442,6 @@
 				2A0DBF9226624A920092AD27 /* ApiConstants.swift in Sources */,
 				2A602C6226640AD0001E9879 /* Device+CoreDataClass.swift in Sources */,
 				2A602C252663B68E001E9879 /* DeviceDetailBuilder.swift in Sources */,
-				2A0DBF71266222DB0092AD27 /* SceneDelegate.swift in Sources */,
 				2A0DBF97266252EB0092AD27 /* DeviceListContracts.swift in Sources */,
 				2A0DBFC42662816C0092AD27 /* BaseViewController.swift in Sources */,
 				2A0DBFBD26626E0C0092AD27 /* DeviceListBuilder.swift in Sources */,
@@ -381,6 +449,7 @@
 				2A602C1C2663B096001E9879 /* ReadingTableViewCell.swift in Sources */,
 				2A602C6326640AD0001E9879 /* Device+CoreDataProperties.swift in Sources */,
 				2A0DBFBA26626DF20092AD27 /* AppRouter.swift in Sources */,
+				2A199DEF26654E49007E279E /* Double+Extensions.swift in Sources */,
 				2A602C192663AFCA001E9879 /* DeviceDetailViewController.swift in Sources */,
 				2A199DEB2665428D007E279E /* String+Extensions.swift in Sources */,
 				2A602C6126640AD0001E9879 /* Reading+CoreDataClass.swift in Sources */,
@@ -395,7 +464,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2A199DF126655176007E279E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A199E04266551FF007E279E /* DeviceListViewModel+UnitTest.swift in Sources */,
+				2A199E0826655DC6007E279E /* DeviceDetailViewModel+UnitTest.swift in Sources */,
+				2A199E0E26656383007E279E /* ApiService+UnitTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A199DFB26655176007E279E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A0DBF6A266222DB0092AD27 /* SensorDataApp */;
+			targetProxy = 2A199DFA26655176007E279E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		2A0DBF74266222DB0092AD27 /* Main.storyboard */ = {
@@ -575,6 +662,49 @@
 			};
 			name = Release;
 		};
+		2A199DFD26655176007E279E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D954CAZSZD;
+				INFOPLIST_FILE = SensorDataAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DenizCagilligecit.SensorDataAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorDataApp.app/SensorDataApp";
+			};
+			name = Debug;
+		};
+		2A199DFE26655176007E279E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D954CAZSZD;
+				INFOPLIST_FILE = SensorDataAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DenizCagilligecit.SensorDataAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SensorDataApp.app/SensorDataApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -592,6 +722,15 @@
 			buildConfigurations = (
 				2A0DBF83266222DD0092AD27 /* Debug */,
 				2A0DBF84266222DD0092AD27 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A199DFC26655176007E279E /* Build configuration list for PBXNativeTarget "SensorDataAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A199DFD26655176007E279E /* Debug */,
+				2A199DFE26655176007E279E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

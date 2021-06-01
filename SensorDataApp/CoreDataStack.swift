@@ -24,7 +24,7 @@ class CoreDataStack {
         let container = NSPersistentContainer(name: self.modelName)
         container.loadPersistentStores { (storeDescription, error) in
             if let error = error as NSError? {
-                print("Unresolved error \(error), \(error.userInfo)")
+              NSLog("Unresolved error \(error), \(error.userInfo)")
             }
         }
         return container
@@ -37,7 +37,7 @@ class CoreDataStack {
             try managedContext.save()
         } catch {
             let nserror = error as NSError
-            print("Unresolved error \(nserror), \(nserror.userInfo)")
+          NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
         }
     }
 }
