@@ -51,8 +51,8 @@ extension DeviceListViewController: UICollectionViewDelegate, UICollectionViewDa
 extension DeviceListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-         let width = self.view.frame.width - 32.0 * 2
-         let height: CGFloat = 150
+         let width = self.view.frame.width - 360
+         let height: CGFloat = 120
 
          return CGSize(width: width, height: height)
      }
@@ -66,13 +66,15 @@ extension DeviceListViewController: DeviceListVMDelegate {
   func handleViewModelOutputs(_ output: DeviceListVMOutput) {
     switch output {
     case .showDeviceList(let devices):
-      if devices.isEmpty {
-        showAlert(message: "Oops. Something went wrong!..")
-      }
-      else {
+      if let devices = devices {
         self.devices = devices
         collectionView.reloadData()
       }
+      else {
+        showAlert(message: "Oops. Something went wrong!..")
+
+      }
+      
 
     case .setLoading(let isLoading):
       if isLoading {
