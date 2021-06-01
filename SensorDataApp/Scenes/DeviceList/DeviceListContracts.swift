@@ -14,7 +14,7 @@ protocol DeviceListVMProtocol {
 }
 enum DeviceListVMOutput {
   case setLoading(Bool)
-  case showDeviceList([Device])
+  case showDeviceList([Device]?)
   case updateTitle(String)
 }
 protocol DeviceListVMDelegate: class {
