@@ -2,16 +2,16 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Reading+CoreDataClass.swift">
+      location = "group:/Users/garage/Desktop/Projects/SmartFrog/SensorDataApp/SensorDataApp/Models/Reading+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:Reading+CoreDataProperties.swift">
+      location = "group:/Users/garage/Desktop/Projects/SmartFrog/SensorDataApp/SensorDataApp/Models/Reading+CoreDataProperties.swift">
    </FileRef>
    <FileRef
-      location = "group:Device+CoreDataClass.swift">
+      location = "group:/Users/garage/Desktop/Projects/SmartFrog/SensorDataApp/SensorDataApp/Models/Device+CoreDataClass.swift">
    </FileRef>
    <FileRef
-      location = "group:Device+CoreDataProperties.swift">
+      location = "group:/Users/garage/Desktop/Projects/SmartFrog/SensorDataApp/SensorDataApp/Models/Device+CoreDataProperties.swift">
    </FileRef>
    <FileRef
       location = "group:SensorDataApp.xcodeproj">
