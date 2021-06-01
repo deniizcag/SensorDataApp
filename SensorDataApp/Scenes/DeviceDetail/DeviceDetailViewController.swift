@@ -77,18 +77,17 @@ extension DeviceDetailViewController: DeviceDetailVMDelegate {
     case .updateValues(let dataType, let values):
       switch dataType {
       case .Temperature:
-        self.tempMaxLabel.text = String(format: "%.2f", values.max() ?? "0")
-        self.tempMinLabel.text = String(format: "%.2f", values.min() ?? "0")
-        self.tempAvgLabel.text = String(format: "%.2f", values[2])
-
+        self.tempMaxLabel.text = values.max()?.toString()
+        self.tempMinLabel.text = values.min()?.toString()
+        self.tempAvgLabel.text = values[2].toString()
       case .Humidity:
-        self.humMaxLabel.text = String(format: "%.2f", values.max() ?? "0")
-        self.humMinLabel.text = String(format: "%.2f", values.min() ?? "0")
-        self.humAvgLabel.text = String(format: "%.2f", values[2])
+        self.humMaxLabel.text = values.max()?.toString()
+        self.humMinLabel.text = values.min()?.toString()
+        self.humAvgLabel.text = values[2].toString()
       case .AirQuality:
-        self.airMaxLabel.text = String(format: "%.2f", values.max() ?? "0")
-        self.airMinLabel.text = String(format: "%.2f", values.min() ?? "0")
-        self.airAvgLabel.text = String(format: "%.2f", values[2])
+        self.airMaxLabel.text = values.max()?.toString()
+        self.airMinLabel.text = values.min()?.toString()
+        self.airAvgLabel.text = values[2].toString()
       }
     case .setLoading(let isLoading):
       if isLoading {
