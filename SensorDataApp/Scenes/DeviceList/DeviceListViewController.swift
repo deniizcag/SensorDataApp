@@ -51,7 +51,7 @@ extension DeviceListViewController: UICollectionViewDelegate, UICollectionViewDa
 extension DeviceListViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-         let width = self.view.frame.width - 360
+         let width = self.view.frame.width - 16 * 2
          let height: CGFloat = 120
 
          return CGSize(width: width, height: height)
